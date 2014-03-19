@@ -1,4 +1,3 @@
-package smithwaterman;
 
 /*
  * http://en.wikipedia.org/wiki/Smith%E2%80%93Waterman_algorithm
