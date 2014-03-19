@@ -1,13 +1,13 @@
-
 /*
  * http://en.wikipedia.org/wiki/Smith%E2%80%93Waterman_algorithm
  */
 
 public class SmithWaterman {
+    
+     public static void main(String[] args) {
 
     // >sp|P51690|ARSE_HUMAN Arylsulfatase E OS=Homo sapiens GN=ARSE PE=1 SV=2
     // http://www.uniprot.org/uniprot/P51690.fasta
-
     static String protein1 =
             "MLHLHHSCLCFRSWLPAMLAVLLSLAPSASSDISASRPNILLLMADDLGIGDIGCYGNNT" +
                     "MRTPNIDRLAEDGVKLTQHISAASLCTPSRAAFLTGRYPVRSGMVSSIGYRVLQWTGASG" +
@@ -19,6 +19,7 @@ public class SmithWaterman {
                     "LAGGEVPQDRVIDGQDLLPLLLGTAQHSDHEFLMHYCERFLHAARWHQRDRGTMWKVHFV" +
                     "TPVFQPEGAGACYGRKVCPCFGEKVVHHDPPLLFDLSRDPSETHILTPASEPVFYQVMER" +
                     "VQQAVWEHQRTLSPVPLQLDRLGNIWRPWLQPCCGPFPLCWCLREDDPQ";
+                    
     // >tr|G3RJQ1|G3RJQ1_GORGO Uncharacterized protein OS=Gorilla gorilla gorilla GN=101154474 PE=4 SV=1
     // http://www.uniprot.org/uniprot/G3RJQ1.fasta
     static String protein2 =
@@ -28,12 +29,10 @@ public class SmithWaterman {
                     "CARWELSEKRVNLEQKLNFLFQVLALVALTLVAGKLTHLIPVSWMPVIWSALSAVLLLAS" +
                     "SYFVGALIVHADCFLMRNHTITEQPMCFQRTTPLILQEVASFLKRNKHGPFLLFVSFLHV" +
                     "HIPLITMENFLGKSLHGLYGDNVEEMDWMVGRILDTLDVEGLSNSTLIYFTSDHGGSLEN" +
-                   // "QLGNTQYGGWNGIYKDTGGKGMGGWEGGIRVPGIFRWPGVLPAGRVIGEPTSLMDVFPTV" +
+                    "QLGNTQYGGWNGIYKDTGGKGMGGWEGGIRVPGIFRWPGVLPAGRVIGEPTSLMDVFPTV" +
                     "VRLAGGEVPQDRVIDGQDLLPLLLGTAQHSDHEFLMHYCERFLHAARWHQRDRGTMWKVH" +
                     "FVTPVFQPEGAGACYGRKVCPCFGEKVVHHDPPLLFDLSRDPSETHILTPASEPMFYQVM" +
                     "ERVQQAVREHQRTLSPVPLQLDRLGNIWRPWLQPCCGPFPLCWCLREDDPQ";
-
-    public static void main(String[] args) {
 
         double score1 = new SmithWaterman().apply(protein1, protein1);
         double score2 = new SmithWaterman().apply(protein1, protein2);
@@ -45,17 +44,18 @@ public class SmithWaterman {
 
     }
 
-    private double gapOpeningPenalty;
-    private double gapExtensionPenalty;
-    public SmithWaterman() {
-        this(8,0);
-    }
-
-
     public SmithWaterman(double gapOpeningPenalty, double gapExtensionPenalty) {
         this.gapOpeningPenalty = gapOpeningPenalty;
         this.gapExtensionPenalty = gapExtensionPenalty;
     }
+    
+    private double gapOpeningPenalty;
+    private double gapExtensionPenalty;
+    
+    public SmithWaterman() {
+        this(8,0);
+    }
+
 
     public double apply(String s1, String s2) {
 
