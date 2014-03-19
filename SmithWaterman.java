@@ -49,14 +49,13 @@ public class SmithWaterman {
         this.gapExtensionPenalty = gapExtensionPenalty;
     }
     
-    private double gapOpeningPenalty;
-    private double gapExtensionPenalty;
-    
     public SmithWaterman() {
         this(8,0);
     }
-
-
+    
+    private double gapOpeningPenalty;
+    private double gapExtensionPenalty;
+    
     public double apply(String s1, String s2) {
 
         double score = 0;
