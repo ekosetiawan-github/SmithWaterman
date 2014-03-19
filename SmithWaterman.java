@@ -37,9 +37,9 @@ public class SmithWaterman {
         double score2 = new SmithWaterman().apply(protein1, protein2);
         double score3 = new SmithWaterman().apply(protein2, protein2);
 
-        System.out.println("score1 = " + score1);
-        System.out.println("score2 = " + score2);
-        System.out.println("score3 = " + score3);
+        System.out.println("protein1 vs protein1 = " + score1);
+        System.out.println("protein1 vs protein2 = " + score2);
+        System.out.println("protein2 vs protein1 = " + score3);
 
     }
 
