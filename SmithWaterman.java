@@ -1,14 +1,13 @@
 /*
  * http://en.wikipedia.org/wiki/Smith%E2%80%93Waterman_algorithm
  */
-
 public class SmithWaterman {
     
      public static void main(String[] args) {
 
     // >sp|P51690|ARSE_HUMAN Arylsulfatase E OS=Homo sapiens GN=ARSE PE=1 SV=2
     // http://www.uniprot.org/uniprot/P51690.fasta
-    static String protein1 =
+    String protein1 =
                     "MLHLHHSCLCFRSWLPAMLAVLLSLAPSASSDISASRPNILLLMADDLGIGDIGCYGNNT" +
                     "MRTPNIDRLAEDGVKLTQHISAASLCTPSRAAFLTGRYPVRSGMVSSIGYRVLQWTGASG" +
                     "GLPTNETTFAKILKEKGYATGLIGKWHLGLNCESASDHCHHPLHHGFDHFYGMPFSLMGD" +
@@ -22,7 +21,7 @@ public class SmithWaterman {
                     
     // >tr|G3RJQ1|G3RJQ1_GORGO Uncharacterized protein OS=Gorilla gorilla gorilla GN=101154474 PE=4 SV=1
     // http://www.uniprot.org/uniprot/G3RJQ1.fasta
-    static String protein2 =
+    String protein2 =
                     "MLHLHHSCLCFRSWLAAMLAVLLSLAPSASSDISASRPNILLLMADDLGIGDIGCYGNNT" +
                     "MRTPNIDRLAEDGVKLTQHISAASLCTPSRAAFLTGRYPVRSGMVSSIGYRVLQWTGASG" +
                     "GLPTNETTFAKILKEKGYATGLIGKWHLGLNCESASDHCHHPLHHGFDHFYGMPFSLMGD" +
